@@ -1,7 +1,7 @@
 import React from "react";
 
 const Apod = ( {dayPhoto} ) => {
-  console.log('in component==',dayPhoto);
+  // console.log('in component==',dayPhoto);
   return (
     <div>
       <div className="photo__content">
