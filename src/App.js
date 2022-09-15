@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import './styles/App.css'
+import PhotoList from "./components/PhotoList";
+import MarsService from "../src/API/MarsService";
+// import photos from "./array";
 
 function App() {
+  const [photos, setPhotos] = useState([]);
+  // console.log('set===',photos)
+
+  async function fetchPhotos() {
+    const photos = await MarsService.getAll();
+    // console.log('in function===', photos)
+    setPhotos(photos);
+  }
+
+  // console.log(photos)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="MarsPhotos">
+      <h1>Mars pictures galery</h1>
+      <button onClick={fetchPhotos}>Get pictures</button>
+      <PhotoList photos={photos.photos} />
     </div>
   );
 }
