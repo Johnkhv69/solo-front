@@ -4,14 +4,15 @@ import Search from "./Search";
 const SearchList = ( {search} ) => {
   console.log("in SearchList==", search);
   const { collection } = search;
-  // const { items } = collection;
   console.log('in Search items ==', collection);
-  console.log(collection?.items);
+  console.log('in Search collection', collection?.items );
+
+
   return (
     <div className="photo">
-      {/* <h1>List of pics</h1>
-      {collection?.items.map((item) => <Search photo={item} key={new Date()} />
-      )} */}
+      {/* <h1>List of pics</h1> */}
+      {collection?.items.slice(0,10).map((item) => <Search search={item} key={Math.random().toString()} />
+      )}
     </div>
   )
 };
