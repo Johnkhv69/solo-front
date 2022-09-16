@@ -4,7 +4,7 @@ import '../styles/App.css'
 
 const SearchList = ( {search} ) => {
   const { collection } = search;
-  // console.log("in SearchList==", search);
+  console.log("in SearchList==", search);
   // console.log('in Search items ==', collection);
   // console.log('in Search collection', collection?.items );
 

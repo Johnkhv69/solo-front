@@ -2,8 +2,9 @@ import React from "react";
 import '../styles/App.css'
 
 const Search = ({ search }) => {
-  console.log('in Search ==', search);
-  
+  // console.log('in Search ==', search);
+  // const array = search.filter((el) => el?.links[0]?.href!==0);
+
   return (
     <div>
       <div className="photo__content">

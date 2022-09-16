@@ -36,7 +36,6 @@ function App() {
 
   async function fetchSearchPhotos(string) {
     const search = await SearchService.getAll(string);
-    console.log('search in fetch===', search)
     setApod(0);
     setPhotos(0)
     setSearch(search);
