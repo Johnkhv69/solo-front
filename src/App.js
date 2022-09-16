@@ -22,6 +22,8 @@ function App() {
   async function fetchMarsPhotos() {
     const photos = await MarsService.getAll();
     // console.log('in function===', photos)
+    setApod(0);
+    setSearch({})
     setPhotos(photos);
   }
   
@@ -29,11 +31,14 @@ function App() {
     const apod = await ApodService.getAll();
     // console.log('in function===', apod)
     setApod(apod);
+    
   }
 
   async function fetchSearchPhotos(string) {
     const search = await SearchService.getAll(string);
     console.log('search in fetch===', search)
+    setApod(0);
+    setPhotos(0)
     setSearch(search);
   }
 
@@ -44,16 +49,25 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <h1>Mars pictures galery</h1>
+    <div className="header">
+      <div className="App">
+        <div className="container">
+          <span>
+
+      <h2>Mars rover pictures galery</h2>
       <button onClick={fetchMarsPhotos}>Get pictures</button>
-      <h1>Find space object</h1>
+          </span>
+      </div>
+      <div className="header">
+      <h2>Find a space object</h2>
       <form>
-        <input value={value}
+        <input value={value} className="input"
           onChange={event => setValue(event.target.value)}
-          type='text' placeholder='orion nebula' />
-        <button onClick={addNewSearch}>Search</button>
-      </form>
+          type='text' placeholder='  orion nebula' />
+        <button onClick={addNewSearch}>Search  it!  </button>
+        </form>
+        </div>
+      </div>
       <SearchList search={search}/>
       <Apod dayPhoto={apod}/>
       <PhotoList photos={photos.photos}/>
