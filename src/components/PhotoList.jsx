@@ -1,5 +1,7 @@
 import React from 'react';
 import PhotoItem from "./PhotoItem";
+import '../styles/App.css'
+
 
 const PhotoList = ({photos}) => {
   // console.log("list photos==", photos);

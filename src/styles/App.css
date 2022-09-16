@@ -8,6 +8,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(249, 251, 242);
+  
 }
 
 .App {
@@ -16,34 +18,81 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 15px;
-  border: 2px solid teal;
+  border: 2px solid rgb(194, 185,154);
+  border-radius: 10px;
   align-items: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: 50;
+  background-color: rgb(232,
+    245,
+    249);
 }
 
 .photo {
   display: flex;
   flex-wrap: wrap;
-  padding: 15px;
+  padding: 1px;
   /* border: 2px solid teal;
   border-radius: 10px; */
   margin-top: 15px;
   justify-content: space-around;
+  background-color: rgb(246, 246, 240);
   align-items: center;
 }
 
 .photo__content {
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 5px;
   margin-top: 15px;
-  border: 2px solid teal;
+  border: 2px solid rgb(194, 185, 154);
   border-radius: 10px;
+  background-color: rgb(232, 245, 249);
+  color: rgb(87, 75, 54);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 button {
   padding: 5px;
-  border: 2px solid teal;
+  border: 2px solid rgb(194, 185, 154);
+  border-radius: 5px;
   margin: 15px;
+  font-size: large;
+  background-color: rgb(221, 223, 224);
 }
+
+input {
+  font-size: 1.2em;
+  height: 1.7em;
+  border-radius: 3px;
+  border-color: rgb(194,
+    185,
+    154);
+}
+
+.header {
+    display: flex;
+      flex-direction: column;
+      justify-content: center;
+  /* align-items: center; */
+      padding: 5px;
+      margin-top: 25px;
+      /* border: 2px solid rgb(154, 177, 194); */
+      border-radius: 10px;
+      /* background-color: rgb(157, 196, 209); */
+      color: rgb(87, 75, 54);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 5px;
+  margin-top: 5px; */
+  /* border: 2px solid rgb(154, 177, 194); */
+  border-radius: 5px;
+  /* background-color: rgb(157, 196, 209); */
+  color: rgb(87, 75, 54);
+}
+
