@@ -9,10 +9,10 @@ const Apod = ( {dayPhoto} ) => {
       <div className="photo__content apod">
         {dayPhoto!==0
 ?
-          <><h2>Astronomy picture of the day</h2>
-            <div><h2>Title: {dayPhoto.title}</h2></div>
-            <div><h3>Explanation: {dayPhoto.explanation}</h3></div>
-            <div><h3>Date: {dayPhoto.date}</h3></div>
+          <><h5>Astronomy picture of the day</h5>
+            <div><h5>Title: {dayPhoto.title}</h5></div>
+            <div><h6>Explanation: {dayPhoto.explanation}</h6></div>
+            <div><h5>Date: {dayPhoto.date}</h5></div>
             <img src={dayPhoto.url} alt='pic' style={{ 'width': "100%", 'heigth': "100%" }} /></>
  :null       }
       </div>
