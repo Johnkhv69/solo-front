@@ -1,12 +1,15 @@
+import axios from "axios";
+
 export default class SearchService {
 
   static async getAll(string) {
-    // console.log('in fetch==', string);
     try {
-      const response = await fetch(`https://images-api.nasa.gov/search?q=${string}`)
-      return response.json();
+      const response = await axios.get(`https://images-api.nasa.gov/search?q=${string}`);
+      const { data } = response;
+         return data;
     } catch (error) {
       console.log('error===>', error);
     }
   }
+
 } 
