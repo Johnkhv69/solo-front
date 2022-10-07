@@ -57,7 +57,7 @@ function App() {
       <div className="form" >
         <Form>
           <Form.Group className="mb-3" >
-            <Form.Label><h6>Find object's photo</h6></Form.Label>
+            <Form.Label><h6>Find object photo</h6></Form.Label>
             <Form.Control type="text" placeholder="orion nebula"
               value={value} className="input"
               onChange={event => setValue(event.target.value)} />
