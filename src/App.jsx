@@ -3,9 +3,11 @@ import './styles/App.css'
 import PhotoList from "./components/PhotoList";
 import SearchList from "./components/SearchList";
 import Apod from "./components/Apod";
-import MarsService from "../src/API/MarsService";
-import ApodService from "../src/API/ApodServise";
-import SearchService from "../src/API/SearchService";
+import MarsService from "./API/MarsService";
+import ApodService from "./API/ApodServise";
+import SearchService from "./API/SearchService";
+import { Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 // import photos from "./array";
 
 function App() {
@@ -26,12 +28,12 @@ function App() {
     setSearch({})
     setPhotos(photos);
   }
-  
+
   async function fetchApod() {
     const apod = await ApodService.getAll();
     // console.log('in function===', apod)
     setApod(apod);
-    
+
   }
 
   async function fetchSearchPhotos(string) {
@@ -47,31 +49,31 @@ function App() {
     // console.log('string in function===', value)
     fetchSearchPhotos(value)
   }
-
   return (
-    <div className="header">
-      <div className="App">
-        <div className="container">
-          <span>
-
-      <h2>Mars rover pictures galery</h2>
-      <button onClick={fetchMarsPhotos}>Get pictures</button>
-          </span>
+    <div className="App">
+      <div className="container">
+        <h6>Mars  rover's cameras  pictures</h6>
+        <Button onClick={fetchMarsPhotos}>Get pictures</Button>
       </div>
-      <div className="header">
-      <h2>Find a space object</h2>
-      <form>
-        <input value={value} className="input"
-          onChange={event => setValue(event.target.value)}
-          type='text' placeholder='  orion nebula' />
-        <button onClick={addNewSearch}>Search  it!  </button>
-        </form>
-        </div>
+      <div className="form" >
+        <Form>
+          <Form.Group className="mb-3" >
+            <Form.Label><h6>Find object's photo</h6></Form.Label>
+            <Form.Control type="text" placeholder="orion nebula"
+              value={value} className="input"
+              onChange={event => setValue(event.target.value)} />
+            <Form.Text className="text-muted">
+              Type here the space object you wish to see
+            </Form.Text>
+          <Button variant="primary" type="submit" onClick={addNewSearch}>
+            Find it
+          </Button>
+          </Form.Group>
+        </Form>
       </div>
-      <SearchList search={search}/>
-      <Apod dayPhoto={apod}/>
-      <PhotoList photos={photos.photos}/>
-      {/* <button onClick={fetchApod}>Picture of the day</button> */}
+      <SearchList search={search} />
+      <Apod dayPhoto={apod} />
+      <PhotoList photos={photos.photos} />
     </div>
   );
 }

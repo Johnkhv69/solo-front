@@ -1,6 +1,6 @@
 import React from 'react';
 import Search from "./Search";
-import '../styles/App.css'
+// import '../styles/App.css'
 
 const SearchList = ({ search }) => {
   const { collection } = search;

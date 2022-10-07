@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import {useState} from 'react'
 import Links from './Links';
+import { Button } from 'react-bootstrap';
 
 const Detail = ({ search }) => {
 
@@ -17,7 +18,7 @@ const Detail = ({ search }) => {
             {
                 hrefs?.map((item) => <Links link={item} key={Math.random().toString()} />)
             }
-          <button onClick={clickHandler}>More</button>
+          <Button onClick={clickHandler} >More</Button>
       </div>
 
   )
