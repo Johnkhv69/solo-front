@@ -4,8 +4,10 @@ import Search from "./Search";
 
 const SearchList = ({ search }) => {
   const { collection } = search;
-  // console.log("in SearchList==", search);
-  // console.log('in Search collection', collection );
+  console.log("in SearchList==", search);
+  // console.log('in Search items ==', collection);
+  // console.log('in Search collection', collection?.items );
+
 
   return (
     <div className="photo">
